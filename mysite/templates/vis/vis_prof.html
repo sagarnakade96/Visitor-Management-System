@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% block body %}
+    <style type="text/css">
+    body
+    {
+    top: 0%;
+    left:10%;
+    }
+    </style>
+    <title>Visitor Management System</title>
+  </head>
+  <body>
+    <div class="heading-section p-5">
+      <h1 class="text-center m-4 p-4 text-uppercase">Visitor <span class="panel-font-section p-2">Log</span></h1>
+    </div>
+    <div class="login-section shadow">
+      <div class="container">
+        <div class="profile-section p-3">
+          <form class="row g-3 needs-validation" method="post" action="vis_prof" novalidate>
+            {% csrf_token %}
+            <div class="col-md-4 position-relative">
+              <label for="validationTooltip01" class="form-label">Name</label>
+              <input type="text" class="form-control" id="validationTooltip01" placeholder="name" name='fname' required>
+              <div class="valid-tooltip">
+                Looks good!
+              </div>
+            </div>
+            
+            <div class="col-md-4 position-relative">
+              <label for="validationTooltipUsername" class="form-label">Visiting Person</label>
+              <div class="input-group has-validation">
+                
+                <input type="text" class="form-control" id="validationTooltipUsername" name="visiting_person" aria-describedby="validationTooltipUsernamePrepend" placeholder="Name or Employee Id" required>
+                <div class="invalid-tooltip">
+                  Please choose a unique and valid Name
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-md-3 position-relative">
+              <label for="validationTooltip05" class="form-label">Contact Number</label>
+              <input type="phone" class="form-control" id="validationTooltip05" name="contact" required>
+              <div class="invalid-tooltip" placeholder="Time">
+                Please provide a valid contact number.
+              </div>
+            </div>
+            <div class="col-md-3 position-relative">
+              <label for="validationTooltip05" class="form-label">Time Allocated</label>
+              <input type="time" class="form-control" id="validationTooltip05" name="al_time" required>
+              <div class="invalid-tooltip" placeholder="Time">
+                Please provide a valid Time Allocated.
+              </div>
+            </div>
+            <div class="col-md-3 position-relative">
+              <label for="validationTooltip04" class="form-label">Location</label>
+              <select class="form-select" id="validationTooltip04" name="location" required>
+                <option selected disabled value="">Choose...</option>
+                <option>Bangalore</option>
+                <option>Raipur</option>
+                <option>Hydrabad</option>
+                <option>Mumbai</option>
+                <option>Delhi</option>
+              </select>
+              <div class="invalid-tooltip">
+                Please select a valid Location.
+              </div>
+            </div>
+            <div class="col-md-3 position-relative">
+              <label for="validationTooltip05" class="form-label">Status</label>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"  value="na">
+                <label class="form-check-label" for="flexRadioDefault1">
+                  Waiting for check in
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="a">
+                <label class="form-check-label" for="flexRadioDefault2">
+                  In Office
+                </label>
+              </div>
+            </div>
+            <div class="col-12">
+              <button class="btn btn-primary" type="submit">Save</button>
+              <button class="btn btn-primary" type="reset">Reset</button>
+              
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  {% endblock body %}

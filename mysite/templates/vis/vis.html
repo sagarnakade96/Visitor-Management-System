@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block body %}
+    <style type="text/css">
+    body
+    {
+    top: 0%;
+    left:12%;
+    }
+    </style>
+    <title>Visitor Management System</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="emp-section m-4 p-4">
+        <h1 class="text-center m-4 p-4 text-uppercase">Visitor <span class="panel-font-section p-2">Log</span>
+        </h1>
+        <!-- action buttons section -->
+        <div class="action-btn">
+          <div class="add-btn-section m-4 text-center">
+            <a href="{% url 'vis_prof' %}" class="btn btn-primary">Add Visitor <span><i class="fa fa-plus-circle" aria-hidden="true"></i></span> </a>
+          </div>
+        </div>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Contact Number</th>
+              <th scope="col">Visiting Person</th>
+              <th scope="col">Location</th>
+              <th scope="col">Alloted Time</th>
+              <th scope="col">Status</th>
+              
+              <th scope="col"  class="text-center" colspan="3">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for item in data %}
+            <tr>
+              <th scope="row">{{ forloop.counter }}</th>
+              <td>{{ item.fname }}</td>
+              <td>{{ item.contact }}</td>
+              <td>{{ item.visiting_person }}</td>    
+              <td>{{ item.location }}</td>
+              <td>{{ item.al_time }}</td>
+              {% if item.in_office == True %}
+              <td>In the office</td>
+              {% endif %}
+              {% if item.in_office  == False %}
+              <td>Not Checked in</td>
+              {% endif %}
+              
+              <td><a href="{% url 'update_vis' item.id %}" class="btn btn-primary">Browse</a></td>
+              <td><a href="{% url 'delete_vis' item.fname %}" class="btn btn-primary">Remove</a></td>
+            </tr>
+            {% endfor %}
+        
+          </tbody>
+        </table>
+      </div>
+    </div>
+{% endblock body %}

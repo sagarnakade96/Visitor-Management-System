@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% block body %}
+        <style type="text/css">
+    body
+    {
+      top: 0%;
+      left:10%;
+    }
+    </style>
+    <title>Visitor Management System</title>
+  </head>
+  <body>
+    <div class="heading-section p-5">
+      <h1 class="text-center m-4 p-4 text-uppercase">Employee <span class="panel-font-section p-2">Details</span></h1>
+    </div>
+    <div class="login-section shadow">
+      <div class="container">
+        <div class="profile-section p-3">
+          <form class="row g-3 needs-validation" method="post" action="add_details" novalidate>
+            {% csrf_token %}
+            <div class="col-md-4 position-relative">
+              <label for="validationTooltip01" class="form-label">First name</label>
+              <input type="text" class="form-control" id="validationTooltip01" placeholder="name" name="fname" required>
+              <div class="valid-tooltip">
+                Looks good!
+              </div>
+            </div>
+            <div class="col-md-4 position-relative">
+              <label for="validationTooltip02" class="form-label">Last name</label>
+              <input type="text" class="form-control" id="validationTooltip02" placeholder="Last Name" name="lname" required>
+              <div class="valid-tooltip">
+                Looks good!
+              </div>
+            </div>
+            
+            <div class="col-md-3 position-relative">
+              <label for="validationTooltip04" class="form-label">Location</label>
+              <select class="form-select" id="validationTooltip04" name="location" required>
+                <option selected disabled value="">Choose...</option>
+                <option>Bangalore</option>
+                <option>Raipur</option>
+                <option>Hydrabad</option>
+                <option>Mumbai</option>
+                <option>Delhi</option>
+              </select>
+              <div class="invalid-tooltip">
+                Please select a valid Location.
+              </div>
+            </div>
+            <div class="col-md-3 position-relative">
+              <label for="validationTooltip04" class="form-label">Depatment</label>
+              <select class="form-select" id="validationTooltip04" name="deparment" required>
+                <option selected disabled value="">Choose...</option>
+                <option>IT</option>
+                <option>Accounts</option>
+                <option>HR</option>
+                <option>Marketing</option>
+                <option>Sales</option>
+              </select>
+              <div class="invalid-tooltip">
+                Please select a valid Depatment.
+              </div>
+            </div>
+            <div class="col-md-3 position-relative">
+              <label for="validationTooltip05" class="form-label">Contact Number</label>
+              <input type="text" class="form-control" id="validationTooltip05" name="contact_num" required>
+              <div class="invalid-tooltip">
+                Please provide a valid Contact Number.
+              </div>
+            </div>
+            <div class="col-12">
+              <button class="btn btn-primary" type="submit">Save</button>
+              <button class="btn btn-primary" type="reset">Reset</button>
+              
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    {% endblock body %}

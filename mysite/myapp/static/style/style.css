@@ -1,0 +1,79 @@
+
+:root{
+	--font1:'Raleway', sans-serif;
+	--green:#3ac47d;
+	--red:#d92550;
+	--blue:#0a66c2;
+}
+
+body
+{
+	display: inline-block;
+	position:absolute;
+	top: 15%;
+	left:28%;
+	font-family: var(--font1);
+	background-color: #F5F5F5;
+
+}
+
+h1,h2,h3,h4,h5,h6
+{
+	font-family: var(--font1);
+	font-size: 180%;
+	font-weight: 800;
+	color:var(--blue);
+}
+
+.panel-font-section
+{
+	color:white;
+	background-color: var(--blue);
+}
+
+.icon1
+{
+	background-color:var(--blue);
+	color: white;
+}
+
+
+.icon2
+{
+	background-color: var(--blue);
+	color: white;
+
+}
+
+
+.icon i
+{
+	font-size: 125%;
+}
+
+h2
+{
+	font-size: 100%;
+}
+
+a
+{
+	text-decoration: none;
+	color:black;
+}
+
+.card
+{
+	align-items: center;
+	border:none;
+}
+
+.login-section
+{
+	background: #FFFFFF;
+}
+
+.emp-section
+{
+	background-color: white;
+}

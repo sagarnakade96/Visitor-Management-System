@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block body %}    
+<div class="heading-section">
+  <h1 class="text-center m-4 p-4 text-uppercase">Login <span class="panel-font-section p-2">Panel</span></h1>
+</div>
+<div class="login-section shadow">
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-6 p-3">
+        <div class="card card-one" style="width: 18rem;">
+          <div class="icon-section p-4">
+            <span class="icon1 text-center p-4 rounded-circle"><i class="fa fa-user" aria-hidden="true"></i>
+            </span>
+          </div>
+          <div class="card-body">
+            <h2 class="text-center"><a href="{% url 'emp_details' %}">Employee Directory</a></h2>
+            
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6 p-3">
+        <div class="card card-one" style="width: 18rem;">
+          <div class="icon-section p-4">
+            <span class="icon2 text-center p-4 rounded-circle"><i class="fa fa-id-card-o" aria-hidden="true"></i>
+            </span>
+          </div>
+          <div class="card-body">
+            <h2 class="text-center"><a href="{% url 'visitors' %}">Visitor Log</a></h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock body %}

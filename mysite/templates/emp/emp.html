@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+    
+{% block body %}
+
+<style>
+    body{
+      top: 0%;
+      left:18%;
+    }
+    </style>
+    <title>Visitor Management System</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="emp-section m-4 p-4">
+        <h1 class="text-center m-4 p-4 text-uppercase">Employee <span class="panel-font-section p-2">Directory</span>
+        </h1>
+        <div class="action-btn">
+          <div class="add-btn-section m-4 text-center">
+            <a href="{% url 'add_details' %}" class="btn btn-primary">Add Employee <span><i class="fa fa-plus-circle" aria-hidden="true"></i></span> </a>
+          </div>
+        </div>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">First Name</th>
+              <th scope="col">Last Name</th>
+              <th scope="col">Deparment</th>
+              <th scope="col">Office Location</th>  
+              <th scope="col">Contact Number</th>
+              <th scope="col"  class="text-center" colspan="2">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for item in data %}
+            <tr>
+              <th scope="row">{{ item.emp_id }}</th>
+              <td>{{ item.fname }}</td>
+              <td>{{ item.lname }}</td>
+              <td>{{ item.deparment }}</td>
+              <td>{{ item.location }}</td>
+              <td>{{ item.contact_num }}</td>
+              <td><a href="{% url 'update_emp' item.emp_id %} " class="btn btn-primary">View</a></td>
+              <td><a href="{% url 'delete_emp' item.emp_id %}" class="btn btn-primary">Delete</a></td>
+            </tr>
+            {% endfor %}
+            
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
+{% endblock body %}
+
+

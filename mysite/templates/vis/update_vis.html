@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block body %}
+    <style type="text/css">
+    body
+    {
+    top: 0%;
+    left:10%;
+    }
+    </style>
+    <title>Visitor Management System</title>
+  </head>
+  <body>
+    <div class="heading-section p-5">
+      <h1 class="text-center m-4 p-4 text-uppercase">Visitor <span class="panel-font-section p-2">Log</span></h1>
+    </div>
+    <div class="login-section shadow">
+      <div class="container">
+        <div class="profile-section p-3">
+          <form class="row g-3 needs-validation" method="post" action="" novalidate>
+            {% csrf_token %}
+            <div class="col-md-4 position-relative">
+              <label for="validationTooltip01" class="form-label">Name</label><br>  
+              {{ visForm.fname }}
+              <div class="valid-tooltip">
+                Looks good!
+              </div>
+            </div>
+            
+            <div class="col-md-4 position-relative">
+              <label for="validationTooltipUsername" class="form-label">Visiting Person</label>
+              <div class="input-group has-validation">
+                
+               {{ visForm.visiting_person }}
+                <div class="invalid-tooltip">
+                  Please choose a unique and valid Name
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 position-relative">
+              <label for="validationTooltip05" class="form-label">Contact Number</label>
+              <input type="phone" class="form-control" id="validationTooltip05" name="contact" required>
+              <div class="invalid-tooltip" placeholder="Time">
+                Please provide a valid contact number.
+              </div>
+            </div>
+            <div class="col-md-3 position-relative">
+              <label for="validationTooltip05" class="form-label">Time Allocated</label>
+              {{ visForm.al_time }}
+              <div class="invalid-tooltip" placeholder="Time">
+                Please provide a valid Time Allocated.
+              </div>
+            </div>
+            <div class="col-md-3 position-relative">
+              <label for="validationTooltip04" class="form-label">Location</label><br>
+              {{ visForm.location }}
+              <div class="invalid-tooltip">
+                Please select a valid Location.
+              </div>
+            </div>
+            <div class="col-md-3 position-relative">
+              <label for="validationTooltip05" class="form-label">Status</label><br>
+              
+              {{ visForm.in_office }}
+            </div>
+            <div class="col-12">
+              <button class="btn btn-primary" type="submit">Update</button>
+              
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  {% endblock body %}
